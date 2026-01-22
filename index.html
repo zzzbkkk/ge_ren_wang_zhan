@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Builder - 个人网站</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 粒子背景 -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" data-lang="zh">AI Product Builder</div>
+            <div class="logo-en" data-lang="en">AI Product Builder</div>
+            
+            <div class="nav-links">
+                <a href="#hero" class="nav-link" data-lang="zh">首页</a>
+                <a href="#about" class="nav-link" data-lang="en">Home</a>
+                
+                <a href="#about" class="nav-link" data-lang="zh">关于我</a>
+                <a href="#about" class="nav-link" data-lang="en">About</a>
+                
+                <a href="#ability" class="nav-link" data-lang="zh">能力矩阵</a>
+                <a href="#ability" class="nav-link" data-lang="en">Ability Matrix</a>
+                
+                <a href="#projects" class="nav-link" data-lang="zh">项目集</a>
+                <a href="#projects" class="nav-link" data-lang="en">Projects</a>
+                
+                <a href="#thinking" class="nav-link" data-lang="zh">产品思考</a>
+                <a href="#thinking" class="nav-link" data-lang="en">Product Thinking</a>
+            </div>
+            
+            <div class="lang-switch">
+                <button id="langToggle" class="lang-btn active">中</button>
+                <button class="lang-btn">EN</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 首页 Hero 区 -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-title">
+                <h1 data-lang="zh">郑柏锴 · AI Product Builder</h1>
+                <h1 data-lang="en">Zheng Baikai · AI Product Builder</h1>
+            </div>
+            
+            <div class="hero-subtitle">
+                <p data-lang="zh">技术浪漫主义者 | 用AI产品连接业务与技术</p>
+                <p data-lang="en">Tech Romantic | Connecting Business and Technology with AI Products</p>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary-btn" data-lang="zh">探索项目</a>
+                <a href="#projects" class="btn primary-btn" data-lang="en">Explore Projects</a>
+                
+                <button id="downloadResume" class="btn resume-btn" data-lang="zh">下载我的简历</button>
+                <button id="downloadResumeEn" class="btn resume-btn" data-lang="en">Download My Resume</button>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link" data-tooltip="小红书"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 关于我 Origin 区 -->
+    <section id="about" class="about-section">
+        <div class="section-title">
+            <h2 data-lang="zh">关于我</h2>
+            <h2 data-lang="en">About Me</h2>
+        </div>
+        
+        <div class="about-content">
+            <!-- 个人标签 -->
+            <div class="about-tags">
+                <div class="tag" data-lang="zh">AI产品经理</div>
+                <div class="tag" data-lang="en">AI Product Manager</div>
+                
+                <div class="tag" data-lang="zh">技术落地实践者</div>
+                <div class="tag" data-lang="en">Tech Implementation Practitioner</div>
+                
+                <div class="tag" data-lang="zh">跨域需求翻译官</div>
+                <div class="tag" data-lang="en">Cross-domain Requirement Translator</div>
+            </div>
+            
+            <!-- 背景与能力 -->
+            <div class="about-background">
+                <h3 data-lang="zh">背景与能力</h3>
+                <h3 data-lang="en">Background & Capabilities</h3>
+                
+                <div class="education">
+                    <div class="edu-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span data-lang="zh">福建师范大学 · 设计专业</span>
+                        <span data-lang="en">Fujian Normal University · Design Major</span>
+                    </div>
+                    <div class="particle-line"></div>
+                </div>
+                
+                <div class="core-capabilities">
+                    <h4 data-lang="zh">核心能力</h4>
+                    <h4 data-lang="en">Core Competencies</h4>
+                    
+                    <div class="capability-grid">
+                        <div class="capability-item">
+                            <div class="capability-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <h5 data-lang="zh">产品侧</h5>
+                            <h5 data-lang="en">Product</h5>
+                            <p data-lang="zh">AI产品全链路设计（PRD/策略/落地）</p>
+                            <p data-lang="en">AI product full-link design (PRD/Strategy/Implementation)</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <div class="capability-icon"><i class="fas fa-robot"></i></div>
+                            <h5 data-lang="zh">技术侧</h5>
+                            <h5 data-lang="en">Technology</h5>
+                            <p data-lang="zh">理解大模型能力边界/工具链（RAG/Agent）</p>
+                            <p data-lang="en">Understanding LLM capability boundaries/toolchain (RAG/Agent)</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <div class="capability-icon"><i class="fas fa-chart-line"></i></div>
+                            <h5 data-lang="zh">业务侧</h5>
+                            <h5 data-lang="en">Business</h5>
+                            <p data-lang="zh">需求抽象+数据驱动优化</p>
+                            <p data-lang="en">Requirement abstraction + data-driven optimization</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 能力验证模块 -->
+                <div class="capability-verification">
+                    <h4 data-lang="zh">能力验证</h4>
+                    <h4 data-lang="en">Capability Verification</h4>
+                    
+                    <div class="methodology">
+                        <h5 data-lang="zh">产品方法论</h5>
+                        <h5 data-lang="en">Product Methodology</h5>
+                        
+                        <div class="principles">
+                            <h6 data-lang="zh">AI产品落地三原则</h6>
+                            <h6 data-lang="en">Three Principles of AI Product Launch</h6>
+                            <ul data-lang="zh">
+                                <li>先锚定 “业务痛点” 再匹配 AI 能力（不做 “技术炫技”）</li>
+                                <li>用 “最小可用产品（MVP）” 验证价值（降低试错成本）</li>
+                                <li>数据驱动迭代（核心指标定义→跟踪→优化）</li>
+                            </ul>
+                            <ul data-lang="en">
+                                <li>Anchor "business pain points" before matching AI capabilities (no "tech showoff")</li>
+                                <li>Validate value with MVP (reduce trial-and-error cost)</li>
+                                <li>Data-driven iteration (core metric definition → tracking → optimization)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tech-boundary">
+                            <h6 data-lang="zh">技术认知边界</h6>
+                            <h6 data-lang="en">Tech Cognitive Boundary</h6>
+                            <p data-lang="zh">熟悉大模型选型（GPT / 通义千问 / GLM）、工具链（LangChain/RAG/Agent）、私有化部署成本模型</p>
+                            <p data-lang="en">Familiar with LLM selection (GPT/Qwen/GLM), toolchains (LangChain/RAG/Agent), private deployment cost models</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary">
+                    <p data-lang="zh">我擅长把“AI技术可能性”转化为“业务可用的产品价值”</p>
+                    <p data-lang="en">I excel at turning "AI technical possibilities" into "business-usable product value"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 能力矩阵区 -->
+    <section id="ability" class="ability-section">
+        <div class="section-title">
+            <h2 data-lang="zh">能力矩阵</h2>
+            <h2 data-lang="en">Ability Matrix</h2>
+        </div>
+        
+        <div class="ability-content">
+            <!-- 产品硬技能雷达图 -->
+            <div class="ability-hard">
+                <h3 data-lang="zh">产品硬技能雷达图</h3>
+                <h3 data-lang="en">Product Hard Skills Radar</h3>
+                
+                <div class="radar-container">
+                    <canvas id="radarChart" width="400" height="400"></canvas>
+                    <div class="radar-info">
+                        <p data-lang="zh">我的能力优势是‘需求-技术-业务’的跨域串联，弥补纯产品/纯技术的信息差</p>
+                        <p data-lang="en">My strength is the cross-domain connection of 'needs-technology-business', bridging the information gap between pure product and pure technology</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 软能力实践案例 -->
+            <div class="ability-soft">
+                <h3 data-lang="zh">软能力实践案例</h3>
+                <h3 data-lang="en">Soft Skills Practice Cases</h3>
+                
+                <div class="soft-case">
+                    <div class="case-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="case-content">
+                        <h4 data-lang="zh">跨团队协作</h4>
+                        <h4 data-lang="en">Cross-team Collaboration</h4>
+                        <p data-lang="zh">在 XX 项目中协调技术、设计、业务 3 个团队，对齐需求优先级，将项目周期从 15 天压缩至 10 天</p>
+                        <p data-lang="en">Coordinated 3 teams (tech, design, business) in the XX project, aligned requirement priorities, and compressed the project cycle from 15 days to 10 days</p>
+                    </div>
+                </div>
+                
+                <div class="soft-case">
+                    <div class="case-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="case-content">
+                        <h4 data-lang="zh">问题解决</h4>
+                        <h4 data-lang="en">Problem Solving</h4>
+                        <p data-lang="zh">在邮件工具项目中，用户反馈‘分类不准确’，通过优化 Prompt + 增加人工校准入口，将准确率从 80% 提升至 92%</p>
+                        <p data-lang="en">In the email tool project, users reported 'inaccurate classification', improved accuracy from 80% to 92% by optimizing Prompt + adding manual calibration entry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 岗位适配区 -->
+    <section id="fitness" class="fitness-section">
+        <div class="section-title">
+            <h2 data-lang="zh">岗位适配</h2>
+            <h2 data-lang="en">Role Fit</h2>
+        </div>
+        
+        <div class="fitness-content">
+            <div class="fitness-intro">
+                <h3 data-lang="zh">AI产品经理岗位匹配点</h3>
+                <h3 data-lang="en">AI Product Manager Role Fit Points</h3>
+                <p data-lang="zh">以下是我与AI产品经理岗位的核心匹配点，体现了我的能力与岗位需求的高度契合</p>
+                <p data-lang="en">The following are the core fit points between me and the AI Product Manager role, demonstrating the high alignment between my abilities and the job requirements</p>
+            </div>
+            
+            <div class="fitness-grid">
+                <!-- 匹配点1：懂AI技术边界 -->
+                <div class="fitness-item">
+                    <div class="fitness-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 data-lang="zh">懂AI技术边界</h4>
+                    <h4 data-lang="en">Understanding AI Technical Boundaries</h4>
+                    <p data-lang="zh">能独立评估大模型 / Agent 的落地可行性</p>
+                    <p data-lang="en">Can independently evaluate the feasibility of LLM / Agent implementation</p>
+                </div>
+                
+                <!-- 匹配点2：会产品全链路 -->
+                <div class="fitness-item">
+                    <div class="fitness-icon">
+                        <i class="fas fa-pipeline"></i>
+                    </div>
+                    <h4 data-lang="zh">会产品全链路</h4>
+                    <h4 data-lang="en">Full Product Lifecycle Experience</h4>
+                    <p data-lang="zh">从需求挖掘→PRD→落地→数据迭代的完整经验</p>
+                    <p data-lang="en">Complete experience from requirement mining → PRD → implementation → data iteration</p>
+                </div>
+                
+                <!-- 匹配点3：有行业认知 -->
+                <div class="fitness-item">
+                    <div class="fitness-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h4 data-lang="zh">有行业认知</h4>
+                    <h4 data-lang="en">Industry Cognition</h4>
+                    <p data-lang="zh">关注企业级 AI / 工具类 AI 的落地趋势</p>
+                    <p data-lang="en">Focus on the implementation trends of enterprise AI / tool AI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 项目集 Creation Realm 区 -->
+    <section id="projects" class="projects-section">
+        <div class="section-title">
+            <h2 data-lang="zh">项目集</h2>
+            <h2 data-lang="en">Projects</h2>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- 项目 1 -->
+            <div class="project-card">
+                <div class="project-cover">
+                    <div class="project-title">
+                        <h3 data-lang="zh">Email Analysis Engine · 结构化邮件智能工具</h3>
+                        <h3 data-lang="en">Email Analysis Engine · Structured Email Intelligence Tool</h3>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-value">
+                        <p data-lang="zh">用AI将杂乱邮件转化为结构化资产，提升办公效率30%</p>
+                        <p data-lang="en">Transform messy emails into structured assets with AI, improving office efficiency by 30%</p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <ul data-lang="zh">
+                            <li>Node-RED流程可视化调试</li>
+                            <li>自动分类+趋势统计</li>
+                            <li>可部署复用架构</li>
+                        </ul>
+                        <ul data-lang="en">
+                            <li>Node-RED flow visual debugging</li>
+                            <li>Auto-classification & Trend Stats</li>
+                            <li>Deployable Reusable Architecture</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 产品决策细节 -->
+                    <div class="product-decisions">
+                        <h4 data-lang="zh">产品决策细节</h4>
+                        <h4 data-lang="en">Product Decision Details</h4>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">指标设计</h5>
+                            <h5 data-lang="en">Metric Design</h5>
+                            <p data-lang="zh">定义核心指标为 “邮件结构化率（≥90%）”“用户单封邮件处理时长（从 5min→1min）”，通过这两个指标验证工具的实际效率提升</p>
+                            <p data-lang="en">Define core metrics as "email structuring rate (≥90%)" and "user single email processing time (from 5min→1min)" to verify the actual efficiency improvement of the tool</p>
+                        </div>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">需求取舍</h5>
+                            <h5 data-lang="en">Requirement Trade-off</h5>
+                            <p data-lang="zh">初期砍掉 “邮件自动回复” 功能 —— 因为该需求依赖 “精准意图识别”，而 MVP 阶段优先保障 “结构化” 的核心价值，避免功能过载</p>
+                            <p data-lang="en">Cut the "auto-reply" feature in the early stage —— because it relies on "precise intent recognition", while the MVP stage prioritizes the core value of "structuring" to avoid feature overload</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品决策细节 -->
+                    <div class="product-decisions">
+                        <h4 data-lang="zh">产品决策细节</h4>
+                        <h4 data-lang="en">Product Decision Details</h4>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">用户分层</h5>
+                            <h5 data-lang="en">User Segmentation</h5>
+                            <p data-lang="zh">针对 “数据分析师” 和 “新人” 设计不同视图 —— 分析师视图保留 “原始数据字段”，新人视图隐藏复杂字段、增加 “语义标签提示”，实现 “千人千面” 的体验适配</p>
+                            <p data-lang="en">Design different views for "data analysts" and "beginners" —— analyst view retains "raw data fields", beginner view hides complex fields and adds "semantic label prompts" to achieve "personalized" experience adaptation</p>
+                        </div>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">落地阻力解决</h5>
+                            <h5 data-lang="en">Implementation Resistance Resolution</h5>
+                            <p data-lang="zh">为了让工业团队接受 3D 工具，设计 “1:1 映射原始数据” 的规则 —— 避免可视化过度抽象导致数据失真，降低业务方的信任成本</p>
+                            <p data-lang="en">To make industrial teams accept 3D tools, design a "1:1 mapping raw data" rule —— avoid data distortion caused by over-abstract visualization, reduce the trust cost of business parties</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品决策细节 -->
+                    <div class="product-decisions">
+                        <h4 data-lang="zh">产品决策细节</h4>
+                        <h4 data-lang="en">Product Decision Details</h4>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">商业化验证</h5>
+                            <h5 data-lang="en">Commercialization Verification</h5>
+                            <p data-lang="zh">设计 “皮肤付费” 的轻量变现模型（赛博风格植物皮肤），验证 “小众风格产品的商业化可能性”</p>
+                            <p data-lang="en">Design a lightweight monetization model of "skin payment" (cyber-style plant skins) to verify the "commercialization possibility of niche-style products"</p>
+                        </div>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">迭代逻辑</h5>
+                            <h5 data-lang="en">Iteration Logic</h5>
+                            <p data-lang="zh">首版只做 3 种植物 + 2 种僵尸，通过 “用户留存率（≥40%）”“每局时长（5-8min）” 验证核心玩法成立后，再迭代新单位（符合 “小步快跑” 的产品节奏）</p>
+                            <p data-lang="en">Only 3 plants + 2 zombies in the first version, after verifying the core gameplay through "user retention rate (≥40%)" and "game duration (5-8min)", then iterate new units (in line with the "small steps fast run" product rhythm)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品复盘模块 -->
+                    <div class="product-review">
+                        <h4 data-lang="zh">复盘与收获</h4>
+                        <h4 data-lang="en">Review & Insights</h4>
+                        <p data-lang="zh">复盘：初期高估了用户对‘自动化’的接受度，后期增加‘半自动化开关’，用户使用率提升40%——收获：产品要‘适配用户习惯’而非‘强行教育用户’</p>
+                        <p data-lang="en">Review: Initially overestimated users' acceptance of 'automation', later added 'semi-automation switch', user usage increased by 40% — Insight: Products should 'adapt to user habits' rather than 'force education on users'</p>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn demo-btn" data-lang="zh">Demo</button>
+                        <button class="btn code-btn" data-lang="en">Demo</button>
+                        
+                        <a href="#" class="btn code-btn" data-lang="zh">Code</a>
+                        <a href="#" class="btn code-btn" data-lang="en">Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 项目 2 -->
+            <div class="project-card">
+                <div class="project-cover">
+                    <div class="project-title">
+                        <h3 data-lang="zh">UNS Semantic Space · 3D工业数据探索工具</h3>
+                        <h3 data-lang="en">UNS Semantic Space · 3D Industrial Data Exploration Tool</h3>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-value">
+                        <p data-lang="zh">将复杂工业数据转化为可遍历的3D语义空间，降低数据理解成本</p>
+                        <p data-lang="en">Transform complex industrial data into traversable 3D semantic space, reducing data understanding costs</p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <ul data-lang="zh">
+                            <li>3D力导向图可视化</li>
+                            <li>深层层级展开</li>
+                            <li>沉浸式学习工具</li>
+                        </ul>
+                        <ul data-lang="en">
+                            <li>3D Force-directed Graph Visualization</li>
+                            <li>Deep Hierarchy Expansion</li>
+                            <li>Immersive Learning Tool</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 产品决策细节 -->
+                    <div class="product-decisions">
+                        <h4 data-lang="zh">产品决策细节</h4>
+                        <h4 data-lang="en">Product Decision Details</h4>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">用户分层</h5>
+                            <h5 data-lang="en">User Segmentation</h5>
+                            <p data-lang="zh">针对 “数据分析师” 和 “新人” 设计不同视图 —— 分析师视图保留 “原始数据字段”，新人视图隐藏复杂字段、增加 “语义标签提示”，实现 “千人千面” 的体验适配</p>
+                            <p data-lang="en">Design different views for "data analysts" and "beginners" —— analyst view retains "raw data fields", beginner view hides complex fields and adds "semantic label prompts" to achieve "personalized" experience adaptation</p>
+                        </div>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">落地阻力解决</h5>
+                            <h5 data-lang="en">Implementation Resistance Resolution</h5>
+                            <p data-lang="zh">为了让工业团队接受 3D 工具，设计 “1:1 映射原始数据” 的规则 —— 避免可视化过度抽象导致数据失真，降低业务方的信任成本</p>
+                            <p data-lang="en">To make industrial teams accept 3D tools, design a "1:1 mapping raw data" rule —— avoid data distortion caused by over-abstract visualization, reduce the trust cost of business parties</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品复盘模块 -->
+                    <div class="product-review">
+                        <h4 data-lang="zh">复盘与收获</h4>
+                        <h4 data-lang="en">Review & Insights</h4>
+                        <p data-lang="zh">复盘：3D视图加载速度慢，通过‘分层加载低精度模型’优化，首屏加载时间从8s降至3s——收获：体验细节直接影响用户留存</p>
+                        <p data-lang="en">Review: 3D view loading was slow, optimized by 'layered loading of low-precision models', first screen loading time reduced from 8s to 3s — Insight: Experience details directly affect user retention</p>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn demo-btn" data-lang="zh">Demo</button>
+                        <button class="btn code-btn" data-lang="en">Demo</button>
+                        
+                        <a href="#" class="btn code-btn" data-lang="zh">Code</a>
+                        <a href="#" class="btn code-btn" data-lang="en">Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 项目 3 -->
+            <div class="project-card">
+                <div class="project-cover">
+                    <div class="project-title">
+                        <h3 data-lang="zh">赛博防线 · AI风格塔防小游戏</h3>
+                        <h3 data-lang="en">Cyber Defense · AI-style Tower Defense Game</h3>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-value">
+                        <p data-lang="zh">用赛博风格重构经典塔防，验证“轻量化AI产品包装”思路</p>
+                        <p data-lang="en">Reconstruct classic tower defense with cyber style, verifying the "lightweight AI product packaging" idea</p>
+                    </div>
+                    
+                    <div class="project-highlights">
+                        <ul data-lang="zh">
+                            <li>电力资源策略系统</li>
+                            <li>多端适配交互</li>
+                            <li>赛博粒子视觉风格</li>
+                        </ul>
+                        <ul data-lang="en">
+                            <li>Power Resource Strategy System</li>
+                            <li>Multi-end Adaptive Interaction</li>
+                            <li>Cyber Particle Visual Style</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 产品决策细节 -->
+                    <div class="product-decisions">
+                        <h4 data-lang="zh">产品决策细节</h4>
+                        <h4 data-lang="en">Product Decision Details</h4>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">商业化验证</h5>
+                            <h5 data-lang="en">Commercialization Verification</h5>
+                            <p data-lang="zh">设计 “皮肤付费” 的轻量变现模型（赛博风格植物皮肤），验证 “小众风格产品的商业化可能性”</p>
+                            <p data-lang="en">Design a lightweight monetization model of "skin payment" (cyber-style plant skins) to verify the "commercialization possibility of niche-style products"</p>
+                        </div>
+                        
+                        <div class="decision-item">
+                            <h5 data-lang="zh">迭代逻辑</h5>
+                            <h5 data-lang="en">Iteration Logic</h5>
+                            <p data-lang="zh">首版只做 3 种植物 + 2 种僵尸，通过 “用户留存率（≥40%）”“每局时长（5-8min）” 验证核心玩法成立后，再迭代新单位（符合 “小步快跑” 的产品节奏）</p>
+                            <p data-lang="en">Only 3 plants + 2 zombies in the first version, after verifying the core gameplay through "user retention rate (≥40%)" and "game duration (5-8min)", then iterate new units (in line with the "small steps fast run" product rhythm)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品复盘模块 -->
+                    <div class="product-review">
+                        <h4 data-lang="zh">复盘与收获</h4>
+                        <h4 data-lang="en">Review & Insights</h4>
+                        <p data-lang="zh">复盘：初期僵尸难度梯度不合理，导致新手流失率高，通过‘动态难度调整’（根据玩家存活波次调整僵尸数量），新手留存提升25%——收获：‘用户分层+动态适配’是轻量化产品的核心</p>
+                        <p data-lang="en">Review: Initially, the zombie difficulty gradient was unreasonable, leading to high new user churn rate. Through 'dynamic difficulty adjustment' (adjusting zombie number based on player survival waves), new user retention increased by 25% — Insight: 'User segmentation + dynamic adaptation' is the core of lightweight products</p>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn demo-btn" data-lang="zh">Demo</button>
+                        <button class="btn code-btn" data-lang="en">Demo</button>
+                        
+                        <a href="#" class="btn code-btn" data-lang="zh">Code</a>
+                        <a href="#" class="btn code-btn" data-lang="en">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 产品思考 Signal 区 -->
+    <section id="thinking" class="thinking-section">
+        <div class="section-title">
+            <h2 data-lang="zh">产品思考</h2>
+            <h2 data-lang="en">Product Thinking</h2>
+        </div>
+        
+        <div class="thinking-content">
+            <div class="thinking-grid">
+                <!-- AI产品趋势笔记 -->
+                <div class="thinking-card">
+                    <div class="thinking-cover">
+                        <div class="thinking-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="thinking-content-inner">
+                        <div class="thinking-category">
+                            <span data-lang="zh">AI产品趋势笔记</span>
+                            <span data-lang="en">AI Product Trend Notes</span>
+                        </div>
+                        
+                        <h3 class="thinking-title" data-lang="zh">《2025企业级AI产品的3个落地坑》</h3>
+                        <h3 class="thinking-title" data-lang="en">《3 Pitfalls of Enterprise AI Product Launch in 2025》</h3>
+                        
+                        <p class="thinking-description" data-lang="zh">比如 “忽视业务流程适配”“过度依赖大模型能力”“数据安全合规缺失”</p>
+                        <p class="thinking-description" data-lang="en">Such as "ignoring business process adaptation", "over-reliance on LLM capabilities", "lack of data security compliance"</p>
+                        
+                        <div class="thinking-meta">
+                            <span class="thinking-date">2025-06-15</span>
+                            <button class="thinking-expand-btn">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 产品拆解案例 -->
+                <div class="thinking-card">
+                    <div class="thinking-cover">
+                        <div class="thinking-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="thinking-content-inner">
+                        <div class="thinking-category">
+                            <span data-lang="zh">产品拆解案例</span>
+                            <span data-lang="en">Product Case Analysis</span>
+                        </div>
+                        
+                        <h3 class="thinking-title" data-lang="zh">《拆解GPT-4o的多模态产品逻辑》</h3>
+                        <h3 class="thinking-title" data-lang="en">《Product Logic of GPT-4o's Multimodality》</h3>
+                        
+                        <p class="thinking-description" data-lang="zh">分析其 “低延迟交互”“多模态原生” 的设计对 C 端 AI 产品的启发</p>
+                        <p class="thinking-description" data-lang="en">Analyze how its "low-latency interaction" and "multimodal native" design inspire C-end AI products</p>
+                        
+                        <div class="thinking-meta">
+                            <span class="thinking-date">2025-05-28</span>
+                            <button class="thinking-expand-btn">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <p data-lang="zh">© 2025 郑柏锴 · 所有项目均为个人实践作品</p>
+                <p data-lang="en">© 2025 Zheng Baikai · All projects are personal practice works</p>
+            </div>
+            
+            <button id="backToTop" class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
